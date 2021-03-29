@@ -1,0 +1,350 @@
+@font-face {
+  font-family:'sarasa-self'; /*这个相当于给字体起个名字，比如“微软雅黑”*/
+  src:url('../fonts/sarasa-fixed-sc-light.ttf'); /*指定字体的路径*/
+}
+
+body {
+    background-position: center center;
+    background-size: cover;
+    font-family: 'Sarasa Fixed SC Light', 'sarasa-self';
+    background-color: #1d1d1d;
+
+}
+
+#panel {
+    background-color: #1d1d1d;
+    height: 700px;
+    width: 1000px;
+    max-width: 1000px;
+    margin: 0 auto;
+    /* display: flex; */
+    justify-content: center;
+    flex-wrap: wrap;
+    line-height: 1.4;
+}
+
+/* PANEL */
+
+#logo-panel {
+    width: 1000px;
+    height: 120px;
+    margin: 20px 0 20px 0;
+}
+
+#serial-panel {
+    width: 1000px;
+    height: 80px;
+    margin: 20px 0 20px 0;
+}
+
+#input-panel {
+    width: 1000px;
+    height: 80px;
+    margin: 20px 0 20px 0;
+
+}
+
+#output-panel {
+    width: 1000px;
+    height: 80px;
+    margin: 20px 0 20px 0;
+
+}
+
+#env-panel {
+    width: 1000px;
+    height: 80px;
+    margin: 20px 0 20px 0;
+
+}
+
+#copyright-panel {
+    width: 1000px;
+    height: 80px;
+    margin: 40px 0 20px 0;
+}
+
+/* logo */
+
+
+#kcores-logo {
+    width: 120px;
+    height: 120px;
+    float: left;
+    background-color: #FFFFFF;
+    /* border-radius: 10px; */
+
+}
+
+.logo-upper {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content:center;  
+}
+
+.kcores-text {
+    font-size: 32px;
+    color: #1d1d1d;
+    font-family: 'Sarasa Fixed SC Light', 'sarasa-self';
+}
+
+#software-name {
+    float: left;
+     width: 120px;
+    height: 120px;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content:center;  
+}
+
+.software-name-text {
+    font-size: 60px;
+    color: #ffffff;
+    font-family: 'Sarasa Fixed SC Light', 'sarasa-self';
+}
+
+#software-version {
+    float: left;
+    margin-top: 15px;
+     width: 80px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content:center;  
+}
+
+.software-version-text {
+    font-size: 16px;
+    color: #ffffff;
+    font-family: 'Sarasa Fixed SC Light', 'sarasa-self';
+}
+
+
+/* LABLE TAB */
+.label-tab {
+    width: 240px;
+    height: 80px;
+    margin: 0;
+    background-color: #FFFFFF;
+    float: left;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content:center;  
+}
+
+.label-tab-serial {
+    width: 240px;
+    height: 80px;
+    margin: 0;
+    background-color: #FFFFFF;
+    float: left;
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content:center;  
+}
+
+.label-text {
+    font-size: 38px;
+    font-family: 'Sarasa Fixed SC Light', 'sarasa-self';
+    font-weight: 800;
+
+}
+
+/* connect-input */
+
+.connect-input {
+    width: 260px;
+    height: 80px;
+    margin: 0;
+    float: left;
+    background-color: #FFFFFF;
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content:center;  
+
+}
+
+.contet-input-inner {
+    width: 250px;
+    height: 70px;
+    margin: 0;
+    float: left;
+    background-color: #1d1d1d;
+    border-radius: 0 10px 10px 0;
+}
+
+.content-input-gt-box {
+    width: 50px;
+    height: 70px;
+    margin: 0;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content:center;  
+}
+
+.content-input-text-box {
+    width: 180px;
+    height: 70px;
+    margin: 0;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content:center;  
+}
+
+.label-text-sub {
+    font-size: 38px;
+    font-family: 'Sarasa Fixed SC Light', 'sarasa-self';
+    font-weight: 800;
+    color: #FFFFFF;
+}
+
+
+.connect-a {
+    cursor: pointer;
+}
+
+.connect-input-box {
+    width: 180px;
+    height: 70px;
+    color: #FFFFFF;
+    background: transparent;
+    border: 0;
+    font-size: 38px;
+    font-family: 'Sarasa Fixed SC Light', 'sarasa-self';
+    
+
+
+    
+}
+
+/* connect-button */
+.connect-button {
+    width: 260px;
+    height: 80px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content:center;  
+    background-image: url("../images/warring-banner.png");
+    background-position: left top;
+    background-repeat: repeat;
+    border-radius: 10px;
+    margin-left: 50px;
+}
+
+.content-button-inner {
+    width: 220px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content:center;  
+    background-color: #1d1d1d;
+    border-radius: 10px;
+
+}
+
+.content-button-text {
+    font-size: 22px;
+    color: #FFFFFF;
+    font-weight: 800;
+}
+
+/* PARAMETER TAB */
+
+.parameter-tab {
+    width: 200px;
+    height: 80px;
+    margin: 0;
+    float: left;
+}
+
+.patameter-title {
+    width: 200px;
+    height: 40px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content:center;  
+}
+
+.parameter-title-text {
+    font-size: 22px;
+    color: #FFFFFF;
+    font-weight: 800;
+}
+
+.patameter-content {
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content:center; 
+}
+
+.parameter {
+    width: 60px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content:center; 
+}
+
+.parameter-text {
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: 800;
+}
+
+.parameter-unit {
+    width: 25px;
+    height: 25px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    color: #1d1d1d;
+    display: flex;
+    align-items: center;
+    justify-content:center; 
+}
+
+.parameter-unit-long {
+    width: 40px;
+    height: 25px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    color: #1d1d1d;
+    display: flex;
+    align-items: center;
+    justify-content:center; 
+}
+
+.parameter-unit-text {
+    font-size: 20px;
+    color: #1d1d1d;
+    font-weight: 800;
+
+}
+
+
+/* copyright */
+
+.copyright-text {
+    font-size: 12px;
+    font-family: 'Sarasa Fixed SC Light', 'sarasa-self';
+    color: #FFFFFF;
+}
+
+.user-link {
+    color: #3eb370;
+}
+
+.opensource-link {
+    color: #ffd900;
+}
