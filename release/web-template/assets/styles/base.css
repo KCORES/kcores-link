@@ -1,0 +1,163 @@
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.cf:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+body {
+    font-family: sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+        'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro',
+        メイリオ, Meiryo, 'ＭＳ Ｐゴシック', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-size: 15px;
+    color: #121212;
+    background: #f6f6f6;
+    -webkit-tap-highlight-color: rgba(18, 18, 18, 0);
+}
+
+.page {
+    max-width: 800px;
+    margin: 1rem auto;
+    font-size: 18px;
+}
+
+p {
+    /* margin-bottom: 1rem; */
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+h1 {
+    font-family: Source Sans Pro;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+header {
+    position: relative;
+    z-index: 100;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.9);
+    -webkit-box-shadow: 0 1px 3px rgba(18, 18, 18, 0.1);
+    box-shadow: 0 1px 3px rgba(18, 18, 18, 0.1);
+    background-clip: content-box;
+}
+header .inner {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 0.4rem;
+}
+header .logo {
+    text-transform: uppercase;
+    font-weight: 500;
+    vertical-align: middle;
+    color: inherit;
+    padding: 0 1em 0 0;
+    font-size: 0.21rem;
+    font-weight: 600;
+}
+.left {
+    display: flex;
+    align-items: baseline;
+}
+
+
+header h1 {
+    font-size: 0.14rem;
+    font-weight: normal;
+}
+
+header nav a {
+    color: #000;
+}
+
+.nav-button {
+    margin: 0 0 0 0.1rem;
+}
+
+nav a {
+    display: inline-block;
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+.nav-now {
+    background: rgba(18, 18, 18, 0.1);
+}
+
+@media screen and (max-width: 1000px) {
+    header .inner {
+        padding: 0 0.2rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header .inner {
+        padding: 0 0 0 0.1rem;
+    }
+    header .logo {
+        padding: 0;
+    }
+    header .logo h1 {
+        font-size: 0.16rem;
+    }
+    header .inner {
+        justify-content: flex-start;
+    }
+    .right {
+        margin-left: 0.1rem;
+    }
+    .right a {
+        margin-right: 0.08rem;
+        font-size: 0.14rem;
+    }
+}
+
+.author_level_1 {
+    color: #909090;
+}
+
+.author_level_2 {
+    color: #006e54;
+}
+
+.author_level_3 {
+    color: #1e50a2 ;
+}
+
+.author_level_4 {
+    color: #f4b3c2;
+}
+
+.author_level_5 {
+    color: #d3381c;
+}
+
+.author_level_6 {
+    color: #e6b422;
+}
+
+.author_level_7 {
+    color: #884898;
+}

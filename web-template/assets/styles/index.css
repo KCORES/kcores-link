@@ -71,23 +71,53 @@ body {
     width: 120px;
     height: 120px;
     float: left;
-    background-color: #FFFFFF;
+    background-color: #f8B500;
     /* border-radius: 10px; */
 
 }
 
 .logo-upper {
     width: 120px;
-    height: 120px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content:center;  
+    margin-top: 20px;
+}
+.logo-middle {
+    width: 120px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content:center;  
+}
+.logo-bottom {
+    width: 120px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content:center;  
+    
 }
 
 .kcores-text {
     font-size: 32px;
     color: #1d1d1d;
     font-family: 'Sarasa Fixed SC Light', 'sarasa-self';
+}
+
+.kcores-sub-text1 {
+    font-size: 14px;
+    color: #1d1d1d;
+    font-family: 'Sarasa Fixed SC Light', 'sarasa-self';
+    padding-left: 20px;
+}
+
+.kcores-sub-text2 {
+    font-size: 14px;
+    color: #1d1d1d;
+    font-family: 'Sarasa Fixed SC Light', 'sarasa-self';
+    padding-left: 34px;
 }
 
 #software-name {
@@ -257,6 +287,12 @@ body {
     font-weight: 800;
 }
 
+.content-button-text-connected {
+    font-size: 22px;
+    color: #3eb370;
+    font-weight: 800;
+}
+
 /* PARAMETER TAB */
 
 .parameter-tab {
@@ -290,7 +326,7 @@ body {
 }
 
 .parameter {
-    width: 60px;
+    width: 65px;
     height: 40px;
     display: flex;
     align-items: center;
@@ -346,5 +382,5 @@ body {
 }
 
 .opensource-link {
-    color: #ffd900;
+    color: #f8B500;
 }
