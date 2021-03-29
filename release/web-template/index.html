@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180293201-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-180293201-1');
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> KCORES Link v0.0.1 </title>
+    <link rel="shortcut icon" href="assets/logo/kcores-logo.ico" />
+    <meta name="keywords" content=" KCORES, 氪金核心, 消费电子, 万兆网络, 家用NAS, 垃圾佬, 服务器, 云服务及主机, 仪表, Homelab, Vintage" />
+    <meta name="description" content="KCORES - 氪金核心. 一个奇特的电子产品爱好者网站. 该项目由 @karminski-牙医 发起, 目的是建立一个大家能轻松讨论泛计算机话题的环境." />
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <script src="assets/scripts/countUp.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/styles/rem.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/base.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/index.css">
+</head>
+
+
+<body>
+
+    <div id="panel">
+        <div id="logo-panel">
+            <a href="https://kcores.com/" target="_blank">
+            <div id="kcores-logo">
+                <div class="logo-upper">
+                    <p class="kcores-text">KCORES</p>
+                </div>
+                <div class="logo-middle">
+
+                    <p class="kcores-sub-text1">Opensource</p>
+                </div>
+                    <div class="logo-bottom">
+                        <p class="kcores-sub-text2">Hardware</p>
+
+                    </div>
+            </div>
+            </a>
+            <a href="https://github.com/KCORES/kcores-link" target="_blank">
+
+            <div id="software-name">
+                    <p class="software-name-text">Link</p>
+            </div>
+            </a>
+            <div id="software-version">
+                <p class="software-version-text">v0.0.1</p>
+            </div>
+        </div>
+        <div id="serial-panel">
+            <div class="label-tab-serial">
+                <p class="label-text">串口</p>
+            </div>
+            <div class="connect-input">
+                <div class="contet-input-inner">
+                    <div class="content-input-gt-box">
+                        <p class="label-text-sub">&gt;</p>
+                    </div>
+                    <div class="content-input-text-box">
+                        <input type="text" class="connect-input-box" id="connect-input-box" />
+                    </div>
+                </div>
+            </div>
+            <a class="connect-a">
+            <div class="connect-button">
+                <div class="content-button-inner">
+                    <p class="content-button-text" id="connect-button">点击连接</p>
+                </div>
+            </div>
+            </a>
+            
+        </div>
+        <div id="input-panel">
+            <div class="label-tab">
+                <p class="label-text">输入</p>
+            </div>
+            <div class="parameter-tab">
+                <div class="patameter-title"><p class="parameter-title-text">电压</p></div>
+                <div class="patameter-content">
+                    <div class="parameter"><p class="parameter-text" id="input-voltage">0.0</p></div>
+                    <div class="parameter-unit"><p class="parameter-unit-text">V</p></div>
+                </div>
+            </div>
+            <div class="parameter-tab">
+                <div class="patameter-title">
+                    <p class="parameter-title-text" >电流</p>
+                </div>
+                <div class="patameter-content">
+                    <div class="parameter">
+                        <p class="parameter-text" id="input-current">0.0</p>
+                    </div>
+                    <div class="parameter-unit">
+                        <p class="parameter-unit-text">A</p>
+                    </div>
+                </div>
+            </div>
+            <div class="parameter-tab">
+                <div class="patameter-title">
+                    <p class="parameter-title-text">功率</p>
+                </div>
+                <div class="patameter-content">
+                    <div class="parameter">
+                        <p class="parameter-text" id="input-power">0.0</p>
+                    </div>
+                    <div class="parameter-unit">
+                        <p class="parameter-unit-text">W</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="output-panel">
+            <div class="label-tab">
+                <p class="label-text">输出</p>
+            </div>
+            <div class="parameter-tab">
+                <div class="patameter-title">
+                    <p class="parameter-title-text">电压</p>
+                </div>
+                <div class="patameter-content">
+                    <div class="parameter">
+                        <p class="parameter-text" id="output-voltage">0.0</p>
+                    </div>
+                    <div class="parameter-unit">
+                        <p class="parameter-unit-text">V</p>
+                    </div>
+                </div>
+            </div>
+            <div class="parameter-tab">
+                <div class="patameter-title">
+                    <p class="parameter-title-text">电流</p>
+                </div>
+                <div class="patameter-content">
+                    <div class="parameter">
+                        <p class="parameter-text" id="output-current">0.0</p>
+                    </div>
+                    <div class="parameter-unit">
+                        <p class="parameter-unit-text">A</p>
+                    </div>
+                </div>
+            </div>
+            <div class="parameter-tab">
+                <div class="patameter-title">
+                    <p class="parameter-title-text">功率</p>
+                </div>
+                <div class="patameter-content">
+                    <div class="parameter">
+                        <p class="parameter-text" id="output-power">0.0</p>
+                    </div>
+                    <div class="parameter-unit">
+                        <p class="parameter-unit-text">W</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="env-panel">
+            <div class="label-tab">
+                <p class="label-text">环境</p>
+            </div>
+            <div class="parameter-tab">
+                <div class="patameter-title">
+                    <p class="parameter-title-text">涡轮</p>
+                </div>
+                <div class="patameter-content">
+                    <div class="parameter">
+                        <p class="parameter-text" id="fan-speed">0</p>
+                    </div>
+                    <div class="parameter-unit-long">
+                        <p class="parameter-unit-text">RPM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="parameter-tab">
+                <div class="patameter-title">
+                    <p class="parameter-title-text">进气</p>
+                </div>
+                <div class="patameter-content">
+                    <div class="parameter">
+                        <p class="parameter-text" id="intake-air-temp">0.0</p>
+                    </div>
+                    <div class="parameter-unit">
+                        <p class="parameter-unit-text">℃</p>
+                    </div>
+                </div>
+            </div>
+            <div class="parameter-tab">
+                <div class="patameter-title">
+                    <p class="parameter-title-text">排气</p>
+                </div>
+                <div class="patameter-content">
+                    <div class="parameter">
+                        <p class="parameter-text" id="outtake-air-temp">0.0</p>
+                    </div>
+                    <div class="parameter-unit">
+                        <p class="parameter-unit-text">℃</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="copyright-panel">
+            <p class="copyright-text">Copyright KCORES 2019 - 2021, Software by: <a class="user-link" href="https://www.zhihu.com/people/karminski" target="_blank">@karminski-牙医</a>, Hardware by: <a class="user-link" href="https://space.bilibili.com/1292029" target="_blank">@AlphaArea</a>.</p>
+            <p class="copyright-text">Learn more about <a class="opensource-link" href="https://kcores.com/opensource" target="_blank">KCORES Open Source Hardware</a>.</p>
+        </div>
+
+    </div>
+
+<!-- websocket -->
+<script type="text/javascript">
+    window.onload = function () {
+        // load websocket
+        var conn;       
+        var connected;
+        connected = false;
+        if (window["WebSocket"]) {
+            conn = new WebSocket("ws://localhost:8081/ws");
+            conn.onclose = function (evt) {
+                var item = document.createElement("div");
+                item.innerHTML = "<b>Connection closed.</b>";
+                appendLog(item);
+            };
+            conn.onmessage = function (evt) {
+                var messages = evt.data.split('\n');
+                for (var i = 0; i < messages.length; i++) {
+                    try {
+                        receivedServerData = JSON.parse(messages[i]);
+                    }
+                    catch (err) {
+                        return
+                    }
+                    // op switch
+                    if (receivedServerData.op == "income-data") {
+                        appendServerData(receivedServerData);
+                    } else if (receivedServerData.op == "serial-connected") {
+                        serialConnected();
+                    } else if (receivedServerData.op == "serial-disconnected") {
+                        serialDisconnected();
+                    }
+                }
+            };
+        } else {
+            var item = document.createElement("div");
+            item.innerHTML = "<b>Your browser does not support WebSockets.</b>";
+            appendLog(item);
+        }
+        document.getElementById("connect-button").onclick = function () {
+            if (!connected) {
+                connectSerial()
+            } else {
+                disconnectSerial()
+            }
+        };
+        document.getElementById('connect-input-box').onclick = function(){
+            serialPortName = document.getElementById('connect-input-box').value;
+            if (!serialPortName || serialPortName == "") {
+                resetConnectButton()
+                return false;
+            }
+        };
+
+        var connectSerial = function () {
+             if (!conn) {
+                return false;
+            }
+            serialPortName = document.getElementById('connect-input-box').value;
+            if (!serialPortName || serialPortName == "") {
+                pleaseInputSerialPortName();
+                return false;
+            }
+            conn.send("{\"op\":\"connect-serial\", \"data\":\"" + serialPortName + "\"}");
+            return true;
+        }
+        var disconnectSerial = function () {
+            if (!conn) {
+                return false;
+            }
+            if (!document.getElementById('connect-input-box').value) {
+                return false;
+            }
+            serialPortName = document.getElementById('connect-input-box').value;
+            conn.send("{\"op\":\"disconnect-serial\", \"data\":\"\"}");
+            return true;
+        }
+        var resetConnectButton = function() {
+            btn = document.getElementById("connect-button");
+            btn.innerText = "点击连接";
+        };
+        var pleaseInputSerialPortName = function() {
+            document.getElementById("connect-button").innerText = "请输入串口名称";
+        }
+        var serialConnected = function() {
+            btn = document.getElementById("connect-button");
+            btn.innerText = "已连接";
+            btn.className = "content-button-text-connected"
+        }
+        var serialDisconnected = function () {
+            btn = document.getElementById("connect-button");
+            btn.innerText = "点击连接";
+            btn.className = "content-button-text"
+        }
+
+    }
+</script>
+
+
+<!-- update data method -->
+<script type="text/javascript">
+    var options = {
+        useEasing: true, // 使用缓和
+        useGrouping: false, // 使用分组(是否显示千位分隔符,一般为 true)
+        separator: ',', // 分隔器(千位分隔符,默认为',')
+        decimal: '.', // 十进制(小数点符号,默认为 '.')
+        prefix: '', // 字首(数字的前缀,根据需要可设为 $,¥,￥ 等)
+        suffix: ''  // 后缀(数字的后缀 ,根据需要可设为 元,个,美元 等) 
+    };
+    var appendServerData = function (serverData) {
+        new CountUp('input-voltage', document.getElementById('input-voltage').innerHTML, serverData.data.InputVoltage, 1, 2, options).start()
+        new CountUp('input-current', document.getElementById('input-current').innerHTML, serverData.data.InputCurrent, 1, 2, options).start()
+        new CountUp('input-power', document.getElementById('input-power').innerHTML, serverData.data.InputPower, 1, 2, options).start()
+        new CountUp('output-voltage', document.getElementById('output-voltage').innerHTML, serverData.data.OutputVoltage, 1, 2, options).start()
+        new CountUp('output-current', document.getElementById('output-current').innerHTML, serverData.data.OutputCurrent, 1, 2, options).start()
+        new CountUp('output-power', document.getElementById('output-power').innerHTML, serverData.data.OutputPower, 1, 2, options).start()
+        new CountUp('intake-air-temp', document.getElementById('intake-air-temp').innerHTML, serverData.data.IntakeAirTemp, 2, 2, options).start()
+        new CountUp('outtake-air-temp', document.getElementById('outtake-air-temp').innerHTML, serverData.data.OuttakeAirTemp, 2, 2, options).start()
+        new CountUp('fan-speed', document.getElementById('fan-speed').innerHTML, serverData.data.FanSpeed, 0, 2, options).start()
+    }
+</script>
+
+</body>
+
+</html>
