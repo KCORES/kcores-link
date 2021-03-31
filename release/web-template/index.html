@@ -13,7 +13,7 @@
     </script>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title> KCORES Link v0.0.1 </title>
+    <title> KCORES Link v0.0.2 </title>
     <link rel="shortcut icon" href="assets/logo/kcores-logo.ico" />
     <meta name="keywords" content=" KCORES, 氪金核心, 消费电子, 万兆网络, 家用NAS, 垃圾佬, 服务器, 云服务及主机, 仪表, Homelab, Vintage" />
     <meta name="description" content="KCORES - 氪金核心. 一个奇特的电子产品爱好者网站. 该项目由 @karminski-牙医 发起, 目的是建立一个大家能轻松讨论泛计算机话题的环境." />
@@ -52,7 +52,7 @@
             </div>
             </a>
             <div id="software-version">
-                <p class="software-version-text">v0.0.1</p>
+                <p class="software-version-text">v0.0.2</p>
             </div>
         </div>
         <div id="serial-panel">
@@ -221,19 +221,15 @@
         if (window["WebSocket"]) {
             conn = new WebSocket("ws://localhost:8081/ws");
             conn.onclose = function (evt) {
-                var item = document.createElement("div");
-                item.innerHTML = "<b>Connection closed.</b>";
-                appendLog(item);
+                serialDisconnected()
             };
             conn.onmessage = function (evt) {
                 var messages = evt.data.split('\n');
                 for (var i = 0; i < messages.length; i++) {
-                    try {
+                        
                         receivedServerData = JSON.parse(messages[i]);
-                    }
-                    catch (err) {
-                        return
-                    }
+
+
                     // op switch
                     if (receivedServerData.op == "income-data") {
                         appendServerData(receivedServerData);
@@ -301,7 +297,7 @@
         }
         var serialDisconnected = function () {
             btn = document.getElementById("connect-button");
-            btn.innerText = "点击连接";
+            btn.innerText = "已断开";
             btn.className = "content-button-text"
         }
 
