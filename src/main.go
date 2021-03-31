@@ -1,7 +1,6 @@
 package main
 
 import (
-    "time"
     "log"
     "os/exec"
     "fmt"
@@ -19,10 +18,15 @@ import (
 
 )
 
+
+
 var hub *Hub 
 var s *serial.Port
 
+var bfstk *BufferStack
+
 func main() {
+    bfstk = new(BufferStack)
     systray.Run(onReady, onExit)
 }
 
@@ -82,7 +86,7 @@ type DataFrame struct {
 }
 
 func OpenSerial(serialPortName string) (*serial.Port, error) {
-    c := &serial.Config{Name: serialPortName, Baud: 115200, ReadTimeout: time.Second * 5}
+    c := &serial.Config{Name: serialPortName, Baud: 115200}
     var err error
     s, err = serial.OpenPort(c)
     if err != nil {
@@ -100,12 +104,34 @@ func closeSerial() bool {
     return true
 }
 
-func ReadSerial() {
-    buf := make([]byte, 128)
-    _, err := s.Read(buf)
-    if err != nil {
-            log.Fatal(err)
+type BufferStack struct {
+    buf []byte
+}
+
+
+
+func (bs *BufferStack) add(buf []byte) {
+    matchTab := map[string]bool{
+        "1": true,"2": true,"3": true,"4": true,"5": true,"6": true,"7": true,"8": true,"9": true,"0": true,",": true,".": true,
     }
+
+    for _, b := range buf {
+        // clean stack
+        cb := string(b) 
+        if cb == "\n" {
+            bufcopy := bs.buf
+            processsSerialData(bufcopy)
+            bs.buf = []byte{} // reset
+            continue
+        } 
+        if _, ok := matchTab[cb]; ok {
+            bs.buf = append(bs.buf, b)
+        }
+    }
+}
+
+func processsSerialData(buf []byte) {
+    fmt.Println(string(buf))
     // parse
     arr := strings.Split(string(buf), ",")
     if len(arr) <9 {
@@ -123,6 +149,15 @@ func ReadSerial() {
     pd.FanSpeed       = arr[8]
     // send
     writeIncomeDataToWEB(pd)
+}
+
+func ReadSerial() {
+    buf := make([]byte, 64)
+    _, err := s.Read(buf)
+    if err != nil {
+        log.Fatal(err)
+    }
+    bfstk.add(buf)
 }
 
 func lisenSerial() {
@@ -196,8 +231,9 @@ func getDataFromWEB() {
 
 func writeIncomeDataToWEB(d EasyPowerData) {
     // format websocket json info
-    tmp := "{\"op\":\"income-data\", \"data\":{\"InputVoltage\":%s,\"InputCurrent\":%s,\"InputPower\":%s,\"OutputVoltage\":%s,\"OutputCurrent\":%s,\"OutputPower\":%s,\"IntakeAirTemp\":%s,\"OuttakeAirTemp\":%s,\"FanSpeed\":%s}}    \n"
+    tmp := "{\"op\":\"income-data\", \"data\":{\"InputVoltage\":%s,\"InputCurrent\":%s,\"InputPower\":%s,\"OutputVoltage\":%s,\"OutputCurrent\":%s,\"OutputPower\":%s,\"IntakeAirTemp\":%s,\"OuttakeAirTemp\":%s,\"FanSpeed\":%s}}"
     frame := fmt.Sprintf(tmp, d.InputVoltage,d.InputCurrent,d.InputPower,d.OutputVoltage,d.OutputCurrent,d.OutputPower,d.IntakeAirTemp,d.OuttakeAirTemp,d.FanSpeed)
+    fmt.Println(frame)
     // send info to websocket data hub
     hub.broadcast <- []byte(frame)
 }

@@ -221,19 +221,15 @@
         if (window["WebSocket"]) {
             conn = new WebSocket("ws://localhost:8081/ws");
             conn.onclose = function (evt) {
-                var item = document.createElement("div");
-                item.innerHTML = "<b>Connection closed.</b>";
-                appendLog(item);
+                serialDisconnected()
             };
             conn.onmessage = function (evt) {
                 var messages = evt.data.split('\n');
                 for (var i = 0; i < messages.length; i++) {
-                    try {
+                        
                         receivedServerData = JSON.parse(messages[i]);
-                    }
-                    catch (err) {
-                        return
-                    }
+
+
                     // op switch
                     if (receivedServerData.op == "income-data") {
                         appendServerData(receivedServerData);
@@ -301,7 +297,7 @@
         }
         var serialDisconnected = function () {
             btn = document.getElementById("connect-button");
-            btn.innerText = "点击连接";
+            btn.innerText = "已断开";
             btn.className = "content-button-text"
         }
 
